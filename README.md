@@ -8,3 +8,19 @@ A high-performance, scalable key-value data store service that supports CRUD ope
 - **Batch API**: Handle multiple key-value pairs in a single request.
 - **Multi-Tenancy**: Separate data storage for different tenants.
 - **Error Handling & Security**: Proper error responses and tenant data isolation.
+
+## API Endpoints
+
+### 1. Create a Key-Value Pair
+**POST** `http://localhost:8080/api/object`
+
+**Request Body:**
+```json
+{ 
+    "key": "username", 
+    "data": {
+        "name": "name",
+        "email": "samplemail@domain.com"
+    },
+    "ttl": 300
+}
