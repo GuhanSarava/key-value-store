@@ -62,3 +62,5 @@ A high-performance, scalable key-value data store service that supports CRUD ope
     }
 }
 ```
+### 4. Delete a Key-Value Pair
+**DELETE** `http://localhost:8080/api/object/{key}`
