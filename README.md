@@ -1,1 +1,1 @@
-The project is about building a scalable key-value data store with APIs for creating, reading, and deleting key-value pairs. It uses an RDBMS for storage and supports features like time-to-live (TTL) for keys, batch processing, and multi-tenancy. The service should handle concurrent access, ensure tenant security, and implement fair usage and error handling. The goal is to create a high-performance, secure system with efficient data storage and management for multiple clients.
+# Key-Value Data Store Service
