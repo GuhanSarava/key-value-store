@@ -99,3 +99,4 @@ spring.datasource.password = your_password
 - **Batch Processing:** Leveraged Spring Data JPA for batch inserts to improve performance.
 
 ## System-Specific Dependencies
+- **Windows:**To run this project on Windows, you need to have Java 17 and PostgreSQL installed. Make sure PostgreSQL is correctly configured.
