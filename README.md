@@ -23,6 +23,7 @@ Clone the repository:
 ```bash
 git clone https://github.com/username/key-value-store.git
 cd key-value-store
+```
 
 ## Features:
 - **CRUD API**: Create, Read, Delete key-value pairs.
