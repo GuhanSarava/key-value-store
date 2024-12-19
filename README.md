@@ -1,7 +1,5 @@
 # Key-Value Data Store Service
 
-# Key-Value Data Store Service
-
 A high-performance, scalable key-value data store service built using Java and Spring Boot. It supports CRUD operations, TTL, batch processing, and multi-tenancy with PostgreSQL as the backend.
 
 ## Table of Contents:
