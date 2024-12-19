@@ -25,7 +25,7 @@ A high-performance, scalable key-value data store service that supports CRUD ope
     "ttl": 300 
 }
 ```
-### 1. Batch Create Key-Value Pairs
+### 2. Batch Create Key-Value Pairs
 **POST** `http://localhost:8080/api/batch/object`
 
 **Request Body:**
@@ -48,4 +48,17 @@ A high-performance, scalable key-value data store service that supports CRUD ope
         "ttl": 300
     }
 ]
+```
+### 3. Get a Key-Value Pair
+**GET** `http://localhost:8080/api/object/{key}`
+
+**Request Body:**
+```json
+{
+    "key": "username",
+    "data": {
+        "name": "name",
+        "email": "samplemail@domain.com"
+    }
+}
 ```
