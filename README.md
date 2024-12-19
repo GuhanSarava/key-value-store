@@ -22,5 +22,29 @@ A high-performance, scalable key-value data store service that supports CRUD ope
         "name": "name",
         "email": "samplemail@domain.com"
     },
-    "ttl": 300
+    "ttl": 300 //seconds
 }
+
+### 1. Batch Create Key-Value Pairs
+**POST** `http://localhost:8080/api/batch/object`
+
+**Request Body:**
+```json
+[
+    { 
+        "key": "username1",
+        "data": {
+            "name": "name1",
+            "email": "samplemail@domain.com"
+        },
+        "ttl": 300 //seconds
+    },
+    {
+        "key": "username2",
+        "data": {
+            "name": "name2",
+            "email": "samplemail@domain.com"
+        }, 
+        "ttl": 300 //seconds
+    }
+]
