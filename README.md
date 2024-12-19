@@ -25,6 +25,13 @@ git clone https://github.com/username/key-value-store.git
 cd key-value-store
 ```
 
+Modify application.properties
+```
+DATABASE_URL=jdbc:postgresql://localhost:5432/kvstore
+DATABASE_USER=your_username
+DATABASE_PASSWORD=your_password
+```
+
 ## Features:
 - **CRUD API**: Create, Read, Delete key-value pairs.
 - **TTL**: Automatically expire keys after a defined time.
