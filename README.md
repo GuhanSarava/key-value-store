@@ -22,7 +22,7 @@ A high-performance, scalable key-value data store service that supports CRUD ope
         "name": "name",
         "email": "samplemail@domain.com"
     },
-    "ttl": 300 //seconds
+    "ttl": 300 
 }
 
 ### 1. Batch Create Key-Value Pairs
@@ -37,7 +37,7 @@ A high-performance, scalable key-value data store service that supports CRUD ope
             "name": "name1",
             "email": "samplemail@domain.com"
         },
-        "ttl": 300 //seconds
+        "ttl": 300
     },
     {
         "key": "username2",
