@@ -94,3 +94,10 @@ spring.datasource.password = your_password
 ```
 ### 4. Delete a Key-Value Pair
 **DELETE** `http://localhost:8080/api/object/{key}`
+```
+
+## Design Decisions:
+- **Spring Boot:**: Chosen for rapid development, ease of integration, and built-in support for REST APIs.
+- **PostgreSQL:**: Selected for its scalability and support for transactional consistency.
+- **TTL Handling:**: Implemented using Spring's scheduling tasks to clean expired keys periodically.
+- **Batch Processing:**: Leveraged Spring Data JPA for batch inserts to improve performance.
