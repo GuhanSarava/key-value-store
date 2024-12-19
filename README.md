@@ -100,5 +100,5 @@ spring.datasource.password = your_password
 ## System-Specific Dependencies:
 - **Windows:** To run this project on Windows, you need to have Java 17 and PostgreSQL installed. Make sure PostgreSQL is correctly configured.
 
-``` Note:
+## Note:
 The project took 4 hours to complete, and I put in my best effort. Any feedback is greatly appreciated.
