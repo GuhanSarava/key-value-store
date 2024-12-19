@@ -27,9 +27,9 @@ cd key-value-store
 
 Modify application.properties
 ```
-DATABASE_URL=jdbc:postgresql://localhost:5432/kvstore
-DATABASE_USER=your_username
-DATABASE_PASSWORD=your_password
+DATABASE_URL = jdbc:postgresql://localhost:5432/kvstore
+DATABASE_USER = your_username
+DATABASE_PASSWORD = your_password
 ```
 
 ## Features:
