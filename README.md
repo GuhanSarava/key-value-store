@@ -7,7 +7,6 @@ A high-performance, scalable key-value data store service built using Java and S
 2. [Testing the Solution](#testing-the-solution)
 3. [Design Decisions](#design-decisions)
 4. [System-Specific Dependencies](#system-specific-dependencies)
-5. [License](#license)
 
 ## Setup Instructions:
 
@@ -101,3 +100,5 @@ spring.datasource.password = your_password
 ## System-Specific Dependencies:
 - **Windows:** To run this project on Windows, you need to have Java 17 and PostgreSQL installed. Make sure PostgreSQL is correctly configured.
 
+``` Note:
+The project took 4 hours to complete, and I put in my best effort. Any feedback is greatly appreciated.
