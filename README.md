@@ -4,11 +4,10 @@ A high-performance, scalable key-value data store service built using Java and S
 
 ## Table of Contents:
 1. [Setup Instructions](#setup-instructions)
-2. [How to Run](#how-to-run)
-3. [Testing the Solution](#testing-the-solution)
-4. [Design Decisions](#design-decisions)
-5. [System-Specific Dependencies](#system-specific-dependencies)
-6. [License](#license)
+2. [Testing the Solution](#testing-the-solution)
+3. [Design Decisions](#design-decisions)
+4. [System-Specific Dependencies](#system-specific-dependencies)
+5. [License](#license)
 
 ## Setup Instructions:
 
