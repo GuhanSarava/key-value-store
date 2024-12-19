@@ -98,5 +98,6 @@ spring.datasource.password = your_password
 - **TTL Handling:** Implemented using Spring's scheduling tasks to clean expired keys periodically.
 - **Batch Processing:** Leveraged Spring Data JPA for batch inserts to improve performance.
 
-## System-Specific Dependencies
-- **Windows:**To run this project on Windows, you need to have Java 17 and PostgreSQL installed. Make sure PostgreSQL is correctly configured.
+## System-Specific Dependencies:
+- **Windows:** To run this project on Windows, you need to have Java 17 and PostgreSQL installed. Make sure PostgreSQL is correctly configured.
+
