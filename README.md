@@ -94,7 +94,6 @@ spring.datasource.password = your_password
 ```
 ### 4. Delete a Key-Value Pair
 **DELETE** `http://localhost:8080/api/object/{key}`
-```
 
 ## Design Decisions:
 - **Spring Boot:**: Chosen for rapid development, ease of integration, and built-in support for REST APIs.
