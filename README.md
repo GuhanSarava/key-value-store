@@ -32,7 +32,6 @@ spring.datasource.password = your_password
 - **CRD API**: Create, Read, Delete key-value pairs.
 - **TTL**: Automatically expire keys after a defined time.
 - **Batch API**: Handle multiple key-value pairs in a single request.
-- **Multi-Tenancy**: Separate data storage for different tenants.
 - **Error Handling & Security**: Proper error responses and tenant data isolation.
 
 ## Testing the Solution:
