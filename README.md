@@ -100,3 +100,4 @@ spring.datasource.password = your_password
 - **PostgreSQL:** Selected for its scalability and support for transactional consistency.
 - **TTL Handling:** Implemented using Spring's scheduling tasks to clean expired keys periodically.
 - **Batch Processing:** Leveraged Spring Data JPA for batch inserts to improve performance.
+
