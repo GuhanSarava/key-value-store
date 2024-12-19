@@ -45,6 +45,7 @@ A high-performance, scalable key-value data store service that supports CRUD ope
             "name": "name2",
             "email": "samplemail@domain.com"
         }, 
-        "ttl": 300 //seconds
+        "ttl": 300
     }
 ]
+```
