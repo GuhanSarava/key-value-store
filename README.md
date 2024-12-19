@@ -52,7 +52,7 @@ A high-performance, scalable key-value data store service that supports CRUD ope
 ### 3. Get a Key-Value Pair
 **GET** `http://localhost:8080/api/object/{key}`
 
-**Request Body:**
+**Response Body:**
 ```json
 {
     "key": "username",
