@@ -39,7 +39,7 @@ spring.datasource.password = your_password
 - **Multi-Tenancy**: Separate data storage for different tenants.
 - **Error Handling & Security**: Proper error responses and tenant data isolation.
 
-## API Endpoints
+## Testing the Solution:
 
 ### 1. Create a Key-Value Pair
 **POST** `http://localhost:8080/api/object`
