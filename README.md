@@ -1,6 +1,28 @@
 # Key-Value Data Store Service
 
-A high-performance, scalable key-value data store service that supports CRUD operations, TTL, and batch processing. The service uses an RDBMS for data storage and ensures multi-tenancy, security, and concurrency.
+# Key-Value Data Store Service
+
+A high-performance, scalable key-value data store service built using Java and Spring Boot. It supports CRUD operations, TTL, batch processing, and multi-tenancy with PostgreSQL as the backend.
+
+## Table of Contents:
+1. [Setup Instructions](#setup-instructions)
+2. [How to Run](#how-to-run)
+3. [Testing the Solution](#testing-the-solution)
+4. [Design Decisions](#design-decisions)
+5. [System-Specific Dependencies](#system-specific-dependencies)
+6. [License](#license)
+
+## Setup Instructions:
+
+### Prerequisites:
+- **Java 17** or later
+- **Maven** (for building the project)
+- **PostgreSQL** (for storing key-value pairs)
+
+Clone the repository:
+```bash
+git clone https://github.com/username/key-value-store.git
+cd key-value-store
 
 ## Features:
 - **CRUD API**: Create, Read, Delete key-value pairs.
