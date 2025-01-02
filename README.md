@@ -15,23 +15,6 @@ git clone https://github.com/username/key-value-store.git
 cd key-value-store
 ```
 
-Modify application.properties
-```
-spring.datasource.url = jdbc:postgresql://localhost:5432/keyValueStore
-spring.datasource.username = your_username
-spring.datasource.password = your_password
-```
-
-## Features:
-- **Multi-Tenancy**: Supports multiple tenants, ensuring data isolation.
-- **Generic Key-Value Storage**: Capable of storing various types of data beyond user information.
-- **Data Size Limits**: Enforces limits on both keys and values to maintain performance and reliability.
-- **CRD API**: Create, Read, Delete key-value pairs.
-- **TTL**: Automatically expire keys after a defined time.
-- **Batch API**: Allows batch creation of key-value pairs with error handling for individual failures.
-- **Concurrency Handling**:Manages concurrent access to ensure data consistency.
-- **Error Handling & Security**: Proper error responses.
-
 ## Database Setup for First-Time Use
 
 The Key-Value Store service uses Spring Boot's default table creation mechanism to automatically set up the database schema. This eliminates the need for manual database initialization scripts.
@@ -51,6 +34,15 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
 
+## Features:
+- **Multi-Tenancy**: Supports multiple tenants, ensuring data isolation.
+- **Generic Key-Value Storage**: Capable of storing various types of data beyond user information.
+- **Data Size Limits**: Enforces limits on both keys and values to maintain performance and reliability.
+- **CRD API**: Create, Read, Delete key-value pairs.
+- **TTL**: Automatically expire keys after a defined time.
+- **Batch API**: Allows batch creation of key-value pairs with error handling for individual failures.
+- **Concurrency Handling**:Manages concurrent access to ensure data consistency.
+- **Error Handling & Security**: Proper error responses.
 
 ## API Endpoints:
 
