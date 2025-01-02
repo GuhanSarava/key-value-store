@@ -83,7 +83,7 @@ spring.datasource.password = your_password
 {
     "key": "username",
     "data": {
-      ......,
+      "field":"value"
     }
 }
 ```
