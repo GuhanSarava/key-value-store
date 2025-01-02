@@ -2,12 +2,6 @@
 
 A high-performance, scalable key-value data store service built using Java and Spring Boot. It supports CRUD operations, TTL, batch processing, and multi-tenancy with PostgreSQL as the backend.
 
-## Table of Contents:
-1. [Setup Instructions](#setup-instructions)
-2. [Testing the Solution](#testing-the-solution)
-3. [Design Decisions](#design-decisions)
-4. [System-Specific Dependencies](#system-specific-dependencies)
-
 ## Setup Instructions:
 
 ### Prerequisites:
@@ -37,6 +31,26 @@ spring.datasource.password = your_password
 - **Batch API**: Allows batch creation of key-value pairs with error handling for individual failures.
 - **Concurrency Handling**:Manages concurrent access to ensure data consistency.
 - **Error Handling & Security**: Proper error responses.
+
+## Database Setup for First-Time Use
+
+The Key-Value Store service uses Spring Boot's default table creation mechanism to automatically set up the database schema. This eliminates the need for manual database initialization scripts.
+
+### How It Works
+- **Spring JPA and Hibernate Integration**: The application leverages Hibernate, an ORM (Object-Relational Mapping) framework, to map Java entity classes to database tables.
+- **Automatic Table Creation**: Spring Boot uses the spring.jpa.hibernate.ddl-auto property in the application.properties file to control the database schema creation and update process.
+
+### Configuration
+- **The following properties in application.properties manage the database setup**:
+```properties
+spring.datasource.url=jdbc:postgresql://localhost:5432/keyValueStore
+spring.datasource.username=your_username
+spring.datasource.password=your_password
+
+spring.jpa.hibernate.ddl-auto=update
+spring.jpa.show-sql=true
+```
+
 
 ## API Endpoints:
 
