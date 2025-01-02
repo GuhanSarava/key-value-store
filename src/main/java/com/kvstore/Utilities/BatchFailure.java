@@ -1,4 +1,4 @@
-package com.kvstore.util;
+package com.kvstore.Utilities;
 
 import lombok.Getter;
 import lombok.Setter;

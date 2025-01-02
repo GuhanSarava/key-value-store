@@ -10,7 +10,7 @@ import com.kvstore.exception.NotFoundException;
 import com.kvstore.repository.KeyValueRepository;
 import com.kvstore.exception.DuplicateKeyException;
 
-import com.kvstore.util.BatchResponse;
+import com.kvstore.Utilities.BatchResponse;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
@@ -30,7 +30,7 @@ public class KeyValueStoreService {
     private ObjectMapper objectMapper;
 
     @Transactional
-    public void createKeyValue(KeyValueRequest request, String tenantId) throws DuplicateKeyException {
+    public synchronized void createKeyValue(KeyValueRequest request, String tenantId) throws DuplicateKeyException {
         if (repository.existsByKeyAndTenantId(request.getKey(), tenantId)){
             throw new DuplicateKeyException("Key '"+ request.getKey() +"' already exists for tenant: " + tenantId);
         }
@@ -57,13 +57,12 @@ public class KeyValueStoreService {
     }
 
     @Transactional
-    public BatchResponse createKeyValueBatch(List<KeyValueRequest> requests, String tenantId){
+    public synchronized BatchResponse createKeyValueBatch(List<KeyValueRequest> requests, String tenantId){
         BatchResponse response = new BatchResponse();
 
         for (KeyValueRequest request : requests){
 
             try{
-
                 if (repository.existsByKeyAndTenantId(request.getKey(),tenantId)){
                     response.addFailure(request.getKey(), "Key '" + request.getKey() + "' already exists for tenant: "+ tenantId);
                     continue;

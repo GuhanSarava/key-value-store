@@ -9,4 +9,6 @@ public interface KeyValueRepository extends JpaRepository<KeyValueEntity, String
     Optional<KeyValueEntity> findByKeyAndTenantId(String key, String tenantId);
 
     boolean existsByKeyAndTenantId(String key, String tenantId);
+
+    int deleteByKeyAndTenantId(String key, String tenantId);
 }
