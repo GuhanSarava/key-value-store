@@ -15,7 +15,7 @@ public class KeyValueRequest {
     private String key;
 
     @Valid
-    private ObjectData data;
+    private Object data;
     private Long ttl;
 
 }

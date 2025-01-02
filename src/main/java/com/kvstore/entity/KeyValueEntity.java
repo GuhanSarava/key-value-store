@@ -16,6 +16,9 @@ public class KeyValueEntity {
     @Column(name = "key", unique = true, length = 32, nullable = false)
     private String key;
 
+    @Column(name = "tenant_id", nullable = false)
+    private String tenantId;
+
     @Column(name = "data", nullable = false, columnDefinition = "TEXT")
     private String data;
 

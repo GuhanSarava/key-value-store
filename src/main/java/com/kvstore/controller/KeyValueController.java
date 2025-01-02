@@ -21,26 +21,25 @@ public class KeyValueController {
     @Autowired
     private KeyValueStoreService service;
 
-    @PostMapping("/object")
-    public ResponseEntity<?> create(@Valid @RequestBody KeyValueRequest request){
-        service.createKeyValue(request);
+    @PostMapping("/object/{tenantId}")
+    public ResponseEntity<?> create(@PathVariable String tenantId, @Valid @RequestBody KeyValueRequest request){
+        service.createKeyValue(request, tenantId);
         return ResponseEntity.ok("Key added successfully");
     }
 
-    @PostMapping("/batch/object")
-    public ResponseEntity<?> createBatch(@Valid @RequestBody List<KeyValueRequest> requests){
-        service.createKeyValueBatch(requests);
-        return ResponseEntity.ok("Keys added successfully");
+    @PostMapping("/batch/object/{tenantId}")
+    public ResponseEntity<?> createBatch(@PathVariable String tenantId, @Valid @RequestBody List<KeyValueRequest> requests){
+        return ResponseEntity.ok(service.createKeyValueBatch(requests, tenantId));
     }
 
-    @GetMapping("/object/{key}")
-    public ResponseEntity<KeyValueResponse> get(@PathVariable String key){
-        return ResponseEntity.ok(service.getKeyValue(key));
+    @GetMapping("/object/{tenantId}/{key}")
+    public ResponseEntity<KeyValueResponse> get(@PathVariable String tenantId, @PathVariable String key){
+        return ResponseEntity.ok(service.getKeyValue(key, tenantId));
     }
 
-    @DeleteMapping("/object/{key}")
-    public ResponseEntity<?> delete(@PathVariable String key){
-        service.deleteKeyValue(key);
+    @DeleteMapping("/object/{tenantId}/{key}")
+    public ResponseEntity<?> delete(@PathVariable String tenantId, @PathVariable String key){
+        service.deleteKeyValue(key, tenantId);
         return ResponseEntity.ok("Key deleted successfully");
     }
 }

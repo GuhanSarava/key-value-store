@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import java.util.Optional;
 
 public interface KeyValueRepository extends JpaRepository<KeyValueEntity, String> {
-    Optional<KeyValueEntity> findByKey(String key);
+    Optional<KeyValueEntity> findByKeyAndTenantId(String key, String tenantId);
 
-    boolean existsByKey(String key);
+    boolean existsByKeyAndTenantId(String key, String tenantId);
 }
