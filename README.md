@@ -29,15 +29,19 @@ spring.datasource.password = your_password
 ```
 
 ## Features:
+- **Multi-Tenancy**: Supports multiple tenants, ensuring data isolation.
+- **Generic Key-Value Storage**: Capable of storing various types of data beyond user information.
+- **Data Size Limits**: Enforces limits on both keys and values to maintain performance and reliability.
 - **CRD API**: Create, Read, Delete key-value pairs.
 - **TTL**: Automatically expire keys after a defined time.
-- **Batch API**: Handle multiple key-value pairs in a single request.
+- **Batch API**: Allows batch creation of key-value pairs with error handling for individual failures.
+- **Concurrency Handling**:Manages concurrent access to ensure data consistency.
 - **Error Handling & Security**: Proper error responses.
 
-## Testing the Solution:
+## API Endpoints:
 
 ### 1. Create a Key-Value Pair
-**POST** `http://localhost:8080/api/object`
+**POST** `/api/object/{tenantId}`
 
 **Request Body:**
 ```json
@@ -51,17 +55,14 @@ spring.datasource.password = your_password
 }
 ```
 ### 2. Batch Create Key-Value Pairs
-**POST** `http://localhost:8080/api/batch/object`
+**POST** `/api/batch/object/{tenantId}`
 
 **Request Body:**
 ```json
 [
     { 
         "key": "username1",
-        "data": {
-            "name": "name1",
-            "email": "samplemail@domain.com"
-        },
+        "data": { "field": "value" },
         "ttl": 300
     },
     {
@@ -75,20 +76,78 @@ spring.datasource.password = your_password
 ]
 ```
 ### 3. Get a Key-Value Pair
-**GET** `http://localhost:8080/api/object/{key}`
+**GET** `/api/object/{tenantId}/{key}`
 
 **Response Body:**
 ```json
 {
     "key": "username",
     "data": {
-        "name": "name",
-        "email": "samplemail@domain.com"
+      ......,
     }
 }
 ```
 ### 4. Delete a Key-Value Pair
-**DELETE** `http://localhost:8080/api/object/{key}`
+**DELETE** `/api/object/{tenantId}/{key}`
+
+##Testing
+Unit tests are included to ensure functionality and reliability. Tests cover various scenarios including
+###Successful creation of key-value pairs:
+```java
+@Test
+void testCreateKeyValue_Success() throws JsonProcessingException {
+    // Setup and assertions for successful creation
+}
+```
+###Handling duplicate keys:
+```java
+@Test
+void testCreateKeyValue_DuplicateKey() {
+    // Test to ensure duplicate keys throw an exception
+}
+```
+###Batch creation with partial success:
+```java
+@Test
+void testCreateKeyValueBatch_PartialSuccess() throws JsonProcessingException {
+        // Tests batch creation where some keys succeed while others fail
+        }
+```
+###Fetching Non-Existent Keys:
+```java
+@Test
+void testGetKeyValue_NotFound() {
+    // Ensures fetching a non-existent key throws an exception
+}
+```
+###Exceeding Value Size Limit:
+```java
+@Test
+void testCreateKeyValue_Exceeds16KB() throws JsonProcessingException {
+    // Tests rejection of values exceeding 16KB
+}
+```
+###Expiration Handling:
+```java
+@Test
+void testGetKeyValue_KeyExpired() {
+    // Verifies that fetching an expired key results in an exception
+}
+
+@Test
+void testGetKeyValue_KeyNotExpired() throws JsonProcessingException {
+    // Checks retrieval of a valid key within its TTL
+}
+```
+###Creation with TTL:
+```java
+@Test
+void testCreateKeyValue_WithTTL() throws JsonProcessingException {
+    // Tests creation of a key-value pair with a specified TTL
+}
+```
+
+
 
 ## Design Decisions:
 - **Spring Boot:** Chosen for rapid development, ease of integration, and built-in support for REST APIs.
