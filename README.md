@@ -34,6 +34,12 @@ spring.jpa.hibernate.ddl-auto=update
 spring.jpa.show-sql=true
 ```
 
+- **Property Explanation**:
+  - spring.datasource.url: Specifies the JDBC connection string for the database.
+  - spring.datasource.username & spring.datasource.password: Provide the database credentials.
+  - spring.jpa.hibernate.ddl-auto=update: Automatically creates or updates the database schema based on the entity definitions.
+  - spring.jpa.show-sql=true: Logs SQL queries for debugging purposes.
+
 ## Features:
 - **Multi-Tenancy**: Supports multiple tenants, ensuring data isolation.
 - **Generic Key-Value Storage**: Capable of storing various types of data beyond user information.
